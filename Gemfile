@@ -20,6 +20,7 @@ gem 'will_paginate'
 group :development, :test do
   gem 'database_cleaner'
   gem 'guard-rspec'
+  gem 'factory_girl_rails'
   gem 'thin'
   gem 'rspec-rails'
 end
