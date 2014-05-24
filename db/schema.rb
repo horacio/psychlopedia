@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140523234610) do
+ActiveRecord::Schema.define(version: 20140524005248) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,20 +40,19 @@ ActiveRecord::Schema.define(version: 20140523234610) do
   end
 
   create_table "experiences", force: true do |t|
-    t.string   "pseudonym",                                 null: false
-    t.string   "title",                                     null: false
+    t.string   "pseudonym",                            null: false
+    t.string   "title",                                null: false
     t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "slug"
     t.string   "set"
     t.string   "setting"
-    t.boolean  "is_licensed",      default: false
+    t.boolean  "is_licensed", default: false
     t.string   "license"
-    t.string   "source",           default: "psychlopedia"
-    t.date     "publication_date"
-    t.string   "locale",           default: "es-AR"
-    t.boolean  "is_approved",      default: false
+    t.string   "source",      default: "psychlopedia"
+    t.string   "locale",      default: "es-AR"
+    t.boolean  "is_approved", default: false
   end
 
   add_index "experiences", ["slug"], name: "index_experiences_on_slug", unique: true, using: :btree

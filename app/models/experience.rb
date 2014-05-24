@@ -14,8 +14,6 @@ class Experience < ActiveRecord::Base
   validates :title, presence: true
   validates :body, presence: true
 
-  before_save :defaults
-
   default_scope { order('created_at DESC') }
 
   scope :approved, -> { where(is_approved: true) }
@@ -30,10 +28,6 @@ class Experience < ActiveRecord::Base
       end
     end
     @results.uniq
-  end
-
-  def defaults
-    self.publication_date = Date.today
   end
 
   # will_paginate per-page limit
