@@ -18,7 +18,7 @@ describe Experience do
 
       experiences = Experience.approved
 
-      experiences.should == [good_experience]
+      expect(experiences).to match_array([good_experience])
     end
   end
 end
