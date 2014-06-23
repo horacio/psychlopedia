@@ -195,6 +195,7 @@ nav a.what:hover {
 }
 
 #container {
+  max-width: 75em;
   padding: 1em;
 }
 
