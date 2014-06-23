@@ -1,6 +1,14 @@
 module ExperiencesHelper
   def markdown(text)
-    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, hard_wrap: true, filter_html: true, autolink: true, no_intraemphasis: true)
+    extensions = {
+      hard_wrap: true,
+      filter_html: true,
+      autolink: true,
+      no_intraemphasis: true
+    }
+
+    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, extensions)
+
     markdown.render(text).html_safe
   end
 
@@ -8,11 +16,7 @@ module ExperiencesHelper
     title.split.map(&:capitalize).join(' ')
   end
 
-  def truncate_and_titleize(title, length = 40, omission = '...')
-    truncate(titleize(title), length: length, omission: omission)
-  end
-
-  def disqus_thread_url(experience)
-    experience_path(experience) + '#disqus_thread'
+  def truncate_and_titleize(title, length = 40)
+    truncate(titleize(title), length: length)
   end
 end
