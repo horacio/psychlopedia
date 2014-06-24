@@ -30,6 +30,14 @@ FactoryGirl.define do
     title
     body 'some text body'
     is_approved false
-    association :cocktails, factory: :cocktail
+
+    factory :experience_with_cocktail_data do
+      ignore do
+        cocktails_count 3
+      end
+      after(:create) do |experience, evaluator|
+        create_list(:cocktail, evaluator.cocktails_count, experience: experience)
+      end
+    end
   end
 end

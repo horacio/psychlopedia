@@ -26,4 +26,11 @@ describe Experience, 'scopes' do
 end
 
 describe Experience, 'cocktails' do
+  context 'user has agreed to add additional data to the experience report' do
+    it 'has cocktail data attached to it' do
+      experience_with_cocktail_data = create(:experience_with_cocktail_data)
+      expect(experience_with_cocktail_data.cocktails).not_to be_empty
+      expect(experience_with_cocktail_data.cocktails.size).to eq(3)
+    end
+  end
 end
