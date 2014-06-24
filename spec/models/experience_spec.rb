@@ -1,5 +1,11 @@
 require 'rails_helper'
 
+describe Experience, 'associations' do
+  it { should have_many(:categories).through(:experience_categories) }
+  it { should have_many(:cocktails) }
+  it { should accept_nested_attributes_for(:cocktails) }
+end
+
 describe Experience, 'validations' do
   it { should validate_presence_of :title }
   it { should validate_presence_of :body }
@@ -19,8 +25,5 @@ describe Experience, 'scopes' do
   end
 end
 
-describe Experience, 'associations' do
-  it { should have_many(:categories).through(:experience_categories) }
-  it { should have_many(:cocktails) }
-  it { should accept_nested_attributes_for(:cocktails) }
+describe Experience, 'cocktails' do
 end
