@@ -1,4 +1,4 @@
-  require 'rails_helper'
+require 'rails_helper'
 
 describe Experience do
   describe 'GET /' do
@@ -45,11 +45,11 @@ describe Experience do
   end
 
   describe 'GET /experiences/new' do
-    pending("you got to finish this")
+    pending('you got to finish this')
   end
 
   describe 'POST /experiences' do
-    pending("you got to finish this")
+    pending('you got to finish this')
   end
 
   describe 'GET /search' do
@@ -79,7 +79,8 @@ describe Experience do
         click_button I18n.t('experiences.search')
 
         expect(page).to have_content /Resultados de la búsqueda para: #{query}/
-        expect(page).to have_link I18n.t('experiences.random.keep_reading'), href: experience_path(@experience)
+        expect(page).to have_link I18n.t('experiences.random.keep_reading'),
+                                  href: experience_path(@experience)
       end
     end
   end
