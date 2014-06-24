@@ -350,13 +350,13 @@ span.self:hover {
   color: #30EFB2;
 }
 
-div.etxt p {
+div.report p {
   text-align: justify;
   font-size: 1em;
   margin-bottom: 20px;
 }
 
-div.etxt {
+div.report {
   width: 100%;
 }
 
@@ -415,11 +415,11 @@ p.notice {
   background-color: #30EFB2;
 }
 
-div.thingo > h1, h2 {
+div.experience_data > h1, h2 {
   float: left;
 }
 
-h3.whoandwhen {
+h3.who_and_when {
   clear: both;
 }
 
@@ -682,4 +682,16 @@ div.categories span a {
 
 div.categories span a:hover {
   border-bottom: 1px solid #F23232;
+}
+
+div.cocktail_data {
+  margin-bottom: 20px;
+}
+
+div.experience_data p, div.cocktail_data p {
+  font-size: 1em;
+}
+
+div.experience_data p > span, div.cocktail_data p > span {
+  font-weight: bold;
 }

@@ -6,16 +6,28 @@
     <%- if session[:admin] -%>
       <p style="margin-bottom:5px;"><%= link_to '~Editar', edit_experience_path(@experience) -%></p>
     <%- end -%>
-    <div class="thingo">
+    <div class="experience_data">
       <h1 class="title" title="<%= titleize(@experience.title) -%>">
         <span class="self"><%= truncate_and_titleize(@experience.title) -%></span>
       </h1>
+      <h3 class="who_and_when">
+        <%= t('psychlopedia.misc.by') -%>
+        <%= @experience.pseudonym -%> &#8669;
+        <%= l @experience.created_at.to_date, format: :long -%>
+      </h3>
+      <div class="set_and_setting">
+        <%- if @experience.set.present? -%>
+          <p>
+            <span><%= t('experiences.show.set')%>: </span><%= @experience.set -%>
+          </p>
+        <%- end -%>
+        <%- if @experience.setting.present? -%>
+          <p>
+            <span><%= t('experiences.show.setting') -%>: </span><%= @experience.setting -%>
+          </p>
+        <%- end -%>
+      </div>
     </div>
-    <h3 class="whoandwhen">
-      <%= t('psychlopedia.misc.by') -%>
-      <%= @experience.pseudonym -%> &#8669;
-      <%= l @experience.created_at.to_date, format: :long -%>
-    </h3>
     <h4>
       <div class="categories">
         <%- unless @experience.categories.empty? -%>
@@ -26,20 +38,18 @@
         <%- end -%>
       </div>
     </h4>
-    <div style="margin-bottom:20px;">
-      <%- if @experience.cocktails.present? -%>
+    <%- if @experience.cocktails.present? -%>
+      <div class="cocktail_data">
         <%- @cocktail = @experience.cocktails.first -%>
-        <p style="font-size:1em;"><span class="emphasis"><%= t('experiences.show.substance') -%>:</span> <%= @cocktail.substance -%></p>
-        <p style="font-size:1em;"><span class="emphasis"><%= t('experiences.show.dosage') -%>:</span> <%= @cocktail.dosage -%></p>
-      <%- end -%>
-      <%- if @experience.set.present? -%>
-        <p style="font-size:1em;"><span class="emphasis"><%= t('experiences.show.set')%>:</span> <%= @experience.set -%></p>
-      <%- end -%>
-      <%- if @experience.setting.present? -%>
-        <p style="font-size:1em;"><span class="emphasis"><%= t('experiences.show.setting') -%>:</span> <%= @experience.setting -%></p>
-      <%- end -%>
-    </div>
-    <div class="etxt">
+        <p>
+          <span><%= t('experiences.show.substance') -%>:</span> <%= @cocktail.substance -%>
+        </p>
+        <p>
+          <span><%= t('experiences.show.dosage') -%>:</span> <%= @cocktail.dosage -%>
+        </p>
+      </div>
+    <%- end -%>
+    <div class="report">
       <%= markdown(@experience.body) -%>
     </div>
     <%- if @experience.source.present? && @experience.source != 'psychlopedia' -%>
