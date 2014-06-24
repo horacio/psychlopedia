@@ -26,6 +26,7 @@ group :development, :test do
   gem 'thin'
   gem 'rspec-rails'
   gem 'selenium-webdriver'
+  gem 'shoulda-matchers'
 end
 
 group :production do
