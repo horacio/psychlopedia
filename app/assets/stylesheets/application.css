@@ -477,10 +477,22 @@ div#experience textarea {
 
 div.search input[type="text"] {
   height: 15px;
-  width: 85%;
+  width: 50%;
   display: inline;
   padding-top: 4px;
   padding-bottom: 5px;
+  border-radius: 3px;
+}
+
+div.search input[type="text"] {
+  -webkit-transition: all 0.7s ease 0s;
+  -moz-transition: all 0.7s ease 0s;
+  -o-transition: all 0.7s ease 0s;
+  transition: all 0.7s ease 0s;
+}
+
+div.search input[type="text"]:focus {
+  width: 70%;
 }
 
 div.search input[type="submit"] {
