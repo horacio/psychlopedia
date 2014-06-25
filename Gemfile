@@ -14,6 +14,7 @@ gem 'sass-rails', '~> 4.0.0'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 gem 'will_paginate'
+gem 'thin'
 
 group :development, :test do
   gem 'capybara'
@@ -23,7 +24,6 @@ group :development, :test do
   gem 'launchy'
   gem 'pry'
   gem 'pry-nav'
-  gem 'thin'
   gem 'rspec-rails'
   gem 'selenium-webdriver'
   gem 'shoulda-matchers'
@@ -32,4 +32,3 @@ end
 group :production do
   gem 'rails_12factor'
 end
-
