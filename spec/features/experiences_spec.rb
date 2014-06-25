@@ -64,13 +64,13 @@ describe Experience do
   describe 'POST /experiences' do
     before do
       Gotcha.skip_validation = true
-      @form_fields = %w(title pseudonym set setting body).map { |field| "experience[#{field}]" }
+      @fields = %w(title pseudonym set setting body).map { |f| "experience[#{f}]" }
     end
 
     it 'sends a report back to us for approval' do
       visit new_experience_path
 
-      @form_fields.each do |field|
+      @fields.each do |field|
         fill_in field, with: 'Nature to be enslaved must enslave us.'
       end
 
