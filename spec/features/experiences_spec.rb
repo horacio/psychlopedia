@@ -45,11 +45,20 @@ describe Experience do
   end
 
   describe 'GET /experiences/new' do
-    pending('you got to finish this')
-  end
+    it 'shows a disclaimer about the approval process' do
+      visit new_experience_path
+      expect(page).to have_content I18n.t('experiences.addition.disclaimer')
+    end
 
-  describe 'POST /experiences' do
-    pending('you got to finish this')
+    it 'shows a simple form to fill your report' do
+      visit new_experience_path
+      expect(page).to have_selector('form')
+    end
+
+    it 'has and requires to fill a CAPTCHA in order to submit' do
+      visit new_experience_path
+      expect(page).to have_xpath "//input[contains(@id, 'gotcha')]"
+    end
   end
 
   describe 'GET /search' do
