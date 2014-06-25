@@ -664,26 +664,6 @@ p.new-disclaimer {
   color: grey;
 }
 
-div.categories {
-  margin-top: -10px;
-}
-
-div.categories p {
-  display: inline-block;
-}
-
-div.categories span {
-  display: inline-block;
-}
-
-div.categories span a {
-  border-bottom: 1px solid black;
-}
-
-div.categories span a:hover {
-  border-bottom: 1px solid #F23232;
-}
-
 div.cocktail_data {
   margin-bottom: 20px;
 }

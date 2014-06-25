@@ -1,9 +1,6 @@
 class Experience < ActiveRecord::Base
   extend FriendlyId
 
-  has_many :experience_categories
-  has_many :categories, through: :experience_categories, dependent: :destroy
-
   has_many :cocktails, dependent: :destroy
   accepts_nested_attributes_for :cocktails, reject_if: lambda { |cocktail| cocktail[:substance].blank? && cocktail[:dosage].blank? }
 
@@ -36,9 +33,5 @@ class Experience < ActiveRecord::Base
   def approve
     self.is_approved = true
     save
-  end
-
-  def categories_used
-    self.categories.map(&:name).map(&:downcase)
   end
 end

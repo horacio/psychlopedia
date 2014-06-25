@@ -28,16 +28,6 @@
         <%- end -%>
       </div>
     </div>
-    <h4>
-      <div class="categories">
-        <%- unless @experience.categories.empty? -%>
-        <p>Categorías: </p>
-          <%- @experience.categories_used.each do |category| -%>
-          <span class="category"><%= link_to category, category_path(category) -%></span>
-          <%- end -%>
-        <%- end -%>
-      </div>
-    </h4>
     <%- if @experience.cocktails.present? -%>
       <div class="cocktail_data">
         <%- @cocktail = @experience.cocktails.first -%>
