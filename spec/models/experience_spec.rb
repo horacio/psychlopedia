@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe Experience, 'associations' do
-  it { should have_many(:categories).through(:experience_categories) }
   it { should have_many(:cocktails) }
   it { should accept_nested_attributes_for(:cocktails) }
 end
