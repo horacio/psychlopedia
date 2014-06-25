@@ -61,6 +61,25 @@ describe Experience do
     end
   end
 
+  describe 'POST /experiences' do
+    before do
+      Gotcha.skip_validation = true
+      @form_fields = %w(title pseudonym set setting body).map { |field| "experience[#{field}]" }
+    end
+
+    it 'sends a report back to us for approval' do
+      visit new_experience_path
+
+      @form_fields.each do |field|
+        fill_in field, with: 'Nature to be enslaved must enslave us.'
+      end
+
+      click_button I18n.t('experiences.addition.submit')
+
+      expect(page).to have_content I18n.t('experiences.waiting_for_approval')
+    end
+  end
+
   describe 'GET /search' do
     context 'there is no content on the site' do
       it 'isn\'t available if there is no content on the site' do
