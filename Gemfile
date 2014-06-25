@@ -8,8 +8,6 @@ gem 'jquery-rails'
 gem 'jquery-turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'pg'
-gem 'pry'
-gem 'pry-nav'
 gem 'rails', '4.0.3'
 gem 'redcarpet'
 gem 'sass-rails', '~> 4.0.0'
@@ -18,8 +16,17 @@ gem 'uglifier', '>= 1.3.0'
 gem 'will_paginate'
 
 group :development, :test do
-  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
+  gem 'guard-rspec'
+  gem 'launchy'
+  gem 'pry'
+  gem 'pry-nav'
   gem 'thin'
+  gem 'rspec-rails'
+  gem 'selenium-webdriver'
+  gem 'shoulda-matchers'
 end
 
 group :production do

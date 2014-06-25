@@ -10,9 +10,7 @@ class Experience < ActiveRecord::Base
   friendly_id :title, use: :slugged
   is_impressionable
 
-  validates :pseudonym, presence: true, length: { maximum: 25 }
-  validates :title, presence: true
-  validates :body, presence: true
+  validates :title, :pseudonym, :body, presence: true
 
   default_scope { order('created_at DESC') }
 
