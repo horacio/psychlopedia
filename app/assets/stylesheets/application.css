@@ -131,12 +131,12 @@ div.about a:hover {
 }
 
 nav a {
-  font-size: 1.2em;
+  font-size: 1.4em;
   color: #000;
   display: inline-block;
   border-bottom: 1px solid #726E6D;
-  margin: 2px auto;
-  padding: 5px;
+  margin: 5px auto;
+  padding: 0px 5px 5px 5px;
   text-decoration: none;
 }
 
@@ -169,16 +169,15 @@ nav a:hover {
 }
 
 nav a.what {
-  color: silver;
+  color: #B8B6B6;
   display: inline-block;
-  border-bottom: 1px solid #726E6D;
+  border-bottom: 2px solid #B8B6B6;
   margin: 20px auto;
-  padding: 5px;
   cursor: help;
 }
 
 nav a.what:hover {
-  border-bottom: 1px solid #30EFB2;
+  border-bottom: 2px solid #30EFB2;
 }
 
 #header {
@@ -231,9 +230,9 @@ a.button, button {
 }
 
 input[type="submit"], input[type="reset"], input[type="button"] {
-  width: 150px;
+  width: 160px;
   font-family: monospace;
-  font-size: .75em;
+  font-size: .85em;
   background: #eee;
   border: 1px solid #aaa;
   border-top: 1px solid #ccc;
@@ -296,12 +295,13 @@ form, fieldset {
 }
 
 li.experience {
-  font-size: 1.1em;
+  font-size: 1.3em;
   line-height: 1.5;
+  margin-bottom: 10px;
 }
 
 li.experience a {
-  font-size: 1.2em;
+  font-size: 1em;
   margin: 0 0 3px 0;
   font-weight: bold;
   color: #333;
@@ -583,11 +583,11 @@ li.logo {
 }
 
 div.pagination {
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 div.pagination :not(.disabled) {
-  padding: 3px;
+  padding: 5px;
   border: 1px solid black;
 }
 
@@ -596,7 +596,7 @@ div.pagination :not(.disabled):hover {
 }
 
 .footnotes a {
-  font-size: .8em;
+  font-size: .9em;
   text-decoration: none;
 }
 
