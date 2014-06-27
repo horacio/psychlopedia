@@ -2,7 +2,7 @@ class Experience < ActiveRecord::Base
   extend FriendlyId
 
   has_many :cocktails, dependent: :destroy
-  accepts_nested_attributes_for :cocktails, reject_if: lambda { |cocktail| cocktail[:substance].blank? && cocktail[:dosage].blank? }
+  accepts_nested_attributes_for :cocktails, reject_if: :cocktails_is_incomplete
 
   friendly_id :title, use: :slugged
   is_impressionable
@@ -33,5 +33,9 @@ class Experience < ActiveRecord::Base
   def approve
     self.is_approved = true
     save
+  end
+
+  def cocktails_is_incomplete(cocktail)
+    cocktail[:substance].blank? && cocktail[:dosage].blank?
   end
 end
