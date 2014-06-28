@@ -3,5 +3,5 @@ if ENV['PASSWORD'].present?
 elsif Rails.env.development? || Rails.env.test?
   ADMIN_PASSWORD = 'password'
 else
-  raise('Por favor especificá una contraseña de administración para Psychlopedia en la variable de entorno PASSWORD')
+  raise('Por favor especificá una contraseña de administración para Psiclopedia en la variable de entorno PASSWORD')
 end

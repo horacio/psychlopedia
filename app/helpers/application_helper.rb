@@ -1,6 +1,6 @@
 module ApplicationHelper
   def page_title
-    @page_title || 'Psychlopedia'
+    @page_title || 'Psiclopedia'
   end
 
   def relocalize_url(locale)

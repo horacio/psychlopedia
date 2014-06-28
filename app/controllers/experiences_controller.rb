@@ -62,7 +62,7 @@ class ExperiencesController < ApplicationController
     else
       translated_title_for_action = t("experiences.#{action_name}_title")
     end
-    @page_title = "Psychlopedia - #{translated_title_for_action}"
+    @page_title = "Psiclopedia - #{translated_title_for_action}"
   end
 
   def extract_and_sanitize_query
