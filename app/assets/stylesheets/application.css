@@ -73,7 +73,7 @@ table {
 */
 
 body {
-  font-family: 'Lato', sans-serif, monospace;
+  font-family: 'Open Sans', sans-serif, monospace;
   font-size: 1em;
   background-color: #F9F9F9;
   color: #333;
@@ -297,13 +297,12 @@ form, fieldset {
 li.experience {
   font-size: 1.3em;
   line-height: 1.5;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 li.experience a {
   font-size: 1em;
   margin: 0 0 3px 0;
-  font-weight: bold;
   color: #333;
   display: inline-block;
   border-bottom: 1px solid black;
@@ -583,7 +582,7 @@ li.logo {
 }
 
 div.pagination {
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 div.pagination :not(.disabled) {
