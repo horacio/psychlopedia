@@ -74,7 +74,7 @@ table {
 */
 
 body {
-  font-family: Helvetica, Lucida Console, monospace;
+  font-family: 'Roboto', sans-serif, monospace;
   font-size: 1em;
   background-color: #F9F9F9;
   color: #333;
@@ -82,6 +82,7 @@ body {
 }
 
 h1 {
+  font-family: 'Fjalla One', sans-serif;
   font-size: 1.75em;
 }
 
@@ -113,13 +114,13 @@ a {
   outline: none;
   text-decoration: none;
   -webkit-transition-property: color, text;
-  -webkit-transition-duration: .25s, .25s;
+  -webkit-transition-duration: .20s, .20s;
   -webkit-transition-timing-function: linear, ease-in;
   -moz-transition-property: color, text;
-  -moz-transition-duration: .25s;
+  -moz-transition-duration: .20s;
   -moz-transition-timing-function: linear, ease-in;
   -o-transition-property: color, text;
-  -o-transition-duration: .25s;
+  -o-transition-duration: .20s;
   -o-transition-timing-function: linear, ease-in;
 }
 
@@ -132,12 +133,12 @@ div.about a:hover {
 }
 
 nav a {
-  font-size: 1.2em;
+  font-size: 1.4em;
   color: #000;
   display: inline-block;
   border-bottom: 1px solid #726E6D;
-  margin: 2px auto;
-  padding: 5px;
+  margin: 5px auto;
+  padding: 0px 5px 5px 5px;
   text-decoration: none;
 }
 
@@ -170,16 +171,15 @@ nav a:hover {
 }
 
 nav a.what {
-  color: silver;
+  color: #B8B6B6;
   display: inline-block;
-  border-bottom: 1px solid #726E6D;
+  border-bottom: 2px solid #B8B6B6;
   margin: 20px auto;
-  padding: 5px;
   cursor: help;
 }
 
 nav a.what:hover {
-  border-bottom: 1px solid #30EFB2;
+  border-bottom: 2px solid #30EFB2;
 }
 
 #header {
@@ -232,9 +232,9 @@ a.button, button {
 }
 
 input[type="submit"], input[type="reset"], input[type="button"] {
-  width: 150px;
+  width: 160px;
   font-family: monospace;
-  font-size: .75em;
+  font-size: .85em;
   background: #eee;
   border: 1px solid #aaa;
   border-top: 1px solid #ccc;
@@ -297,20 +297,21 @@ form, fieldset {
 }
 
 li.experience {
-  font-size: 1.1em;
+  font-size: 1.3em;
   line-height: 1.5;
+  margin-bottom: 15px;
 }
 
 li.experience a {
-  font-size: 1.2em;
+  font-size: 1em;
   margin: 0 0 3px 0;
-  font-weight: bold;
   color: #333;
   display: inline-block;
   border-bottom: 1px solid black;
 }
 
 li.experience a:hover {
+  color: #32725D;
   border-bottom: 1px solid #30EFB2;
 }
 
@@ -584,11 +585,11 @@ li.logo {
 }
 
 div.pagination {
-  margin-top: 10px;
+  margin-top: 30px;
 }
 
 div.pagination :not(.disabled) {
-  padding: 3px;
+  padding: 5px;
   border: 1px solid black;
 }
 
@@ -597,7 +598,7 @@ div.pagination :not(.disabled):hover {
 }
 
 .footnotes a {
-  font-size: .8em;
+  font-size: .9em;
   text-decoration: none;
 }
 

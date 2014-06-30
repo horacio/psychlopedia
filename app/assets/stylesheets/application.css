@@ -73,7 +73,7 @@ table {
 */
 
 body {
-  font-family: 'Open Sans', sans-serif, monospace;
+  font-family: 'Roboto', sans-serif, monospace;
   font-size: 1em;
   background-color: #F9F9F9;
   color: #333;
@@ -81,6 +81,7 @@ body {
 }
 
 h1 {
+  font-family: 'Fjalla One', sans-serif;
   font-size: 1.75em;
 }
 
@@ -112,13 +113,13 @@ a {
   outline: none;
   text-decoration: none;
   -webkit-transition-property: color, text;
-  -webkit-transition-duration: .25s, .25s;
+  -webkit-transition-duration: .20s, .20s;
   -webkit-transition-timing-function: linear, ease-in;
   -moz-transition-property: color, text;
-  -moz-transition-duration: .25s;
+  -moz-transition-duration: .20s;
   -moz-transition-timing-function: linear, ease-in;
   -o-transition-property: color, text;
-  -o-transition-duration: .25s;
+  -o-transition-duration: .20s;
   -o-transition-timing-function: linear, ease-in;
 }
 
@@ -309,6 +310,7 @@ li.experience a {
 }
 
 li.experience a:hover {
+  color: #32725D;
   border-bottom: 1px solid #30EFB2;
 }
 
