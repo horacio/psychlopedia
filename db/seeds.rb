@@ -23,7 +23,22 @@ Ut dolor ante, sagittis nec ornare eu, sollicitudin eu nisi. Sed in enim quis an
 Morbi quis ipsum sed dui placerat tristique. Integer consequat dolor enim, nec pretium lorem faucibus vitae. Mauris lacinia sem aliquet urna convallis, eu varius velit aliquam. Vestibulum sit amet turpis a sem varius sollicitudin. Praesent eu eleifend metus. Sed interdum varius lorem non egestas. Aenean metus massa, placerat in mauris vel, viverra pellentesque nunc. Sed neque dui, molestie eget molestie in, condimentum non enim. In ac nunc pretium, feugiat metus ac, placerat turpis. Curabitur malesuada ligula vel urna feugiat, a semper tortor dignissim. Fusce ut est a erat porttitor facilisis.
 }
 
+substances = %w(LSD MDMA DXM THC PCP 25i-NBOMe Ketamine DMT 2C-B 2C-P)
+dosages = ["2mg", "3 tabs", "1 doobie", "a cigar", "100mg", "750ug", "1g", "4 pills", "3 hits", "1 bong"]
+presentations = %w(pills tablets powder hash syrup blotter oinment cigarette extract)
+administrations = %w(intranasal oral buccal intradermal rectal sublingual intramuscular intravenous intravitreal transmucosal)
+
 titles.zip(pseudonyms).each do |title, pseudonym|
   experience = Experience.create(title: title, pseudonym: pseudonym, body: body)
+
   experience.approve
+
+  cocktail = experience.cocktails.build
+
+  cocktail.substance = substances.shuffle.first
+  cocktail.dosage = dosages.shuffle.first
+  cocktail.presentation = presentations.shuffle.first
+  cocktail.administration = administrations.shuffle.first
+
+  cocktail.save!
 end
