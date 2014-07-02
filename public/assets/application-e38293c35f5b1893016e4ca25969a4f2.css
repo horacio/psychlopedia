@@ -74,7 +74,7 @@ table {
 */
 
 body {
-  font-family: Helvetica, Lucida Console, monospace;
+  font-family: 'Roboto', sans-serif, monospace;
   font-size: 1em;
   background-color: #F9F9F9;
   color: #333;
@@ -82,6 +82,7 @@ body {
 }
 
 h1 {
+  font-family: 'Fjalla One', sans-serif;
   font-size: 1.75em;
 }
 
@@ -113,13 +114,13 @@ a {
   outline: none;
   text-decoration: none;
   -webkit-transition-property: color, text;
-  -webkit-transition-duration: .25s, .25s;
+  -webkit-transition-duration: .20s, .20s;
   -webkit-transition-timing-function: linear, ease-in;
   -moz-transition-property: color, text;
-  -moz-transition-duration: .25s;
+  -moz-transition-duration: .20s;
   -moz-transition-timing-function: linear, ease-in;
   -o-transition-property: color, text;
-  -o-transition-duration: .25s;
+  -o-transition-duration: .20s;
   -o-transition-timing-function: linear, ease-in;
 }
 
@@ -257,7 +258,7 @@ textarea, select, input, input[type="text"], input[type="password"], input[type=
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
   border-radius: 2px;
-  font-size: .875em;
+  font-size: 1.25em;
   width: 600px;
   max-width: 100%;
   display: block;
@@ -298,19 +299,19 @@ form, fieldset {
 li.experience {
   font-size: 1.3em;
   line-height: 1.5;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 li.experience a {
   font-size: 1em;
   margin: 0 0 3px 0;
-  font-weight: bold;
   color: #333;
   display: inline-block;
   border-bottom: 1px solid black;
 }
 
 li.experience a:hover {
+  color: #32725D;
   border-bottom: 1px solid #30EFB2;
 }
 
@@ -477,7 +478,7 @@ div#experience textarea {
 }
 
 div.search input[type="text"] {
-  height: 15px;
+  height: 20px;
   width: 50%;
   display: inline;
   padding-top: 4px;
@@ -494,12 +495,6 @@ div.search input[type="text"] {
 
 div.search input[type="text"]:focus {
   width: 70%;
-}
-
-div.search input[type="submit"] {
-  display: inline;
-  height: 25px;
-  width: 80px;
 }
 
 div.search form {
@@ -584,7 +579,7 @@ li.logo {
 }
 
 div.pagination {
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 div.pagination :not(.disabled) {
