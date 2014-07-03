@@ -72,11 +72,7 @@ GEM
       guard (~> 2.1)
       rspec (>= 2.14, < 4.0)
     hike (1.2.3)
-    httpclient (2.4.0)
     i18n (0.6.9)
-    impressionist (1.5.1)
-      httpclient (~> 2.2)
-      nokogiri (~> 1.5)
     jbuilder (1.5.3)
       activesupport (>= 3.0.0)
       multi_json (>= 1.2.0)
@@ -215,7 +211,6 @@ DEPENDENCIES
   friendly_id (~> 5.0.0)
   gotcha
   guard-rspec
-  impressionist
   jbuilder (~> 1.2)
   jquery-rails
   jquery-turbolinks
