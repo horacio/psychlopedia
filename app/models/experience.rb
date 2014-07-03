@@ -5,7 +5,6 @@ class Experience < ActiveRecord::Base
   accepts_nested_attributes_for :cocktails, reject_if: :cocktails_is_incomplete
 
   friendly_id :title, use: :slugged
-  is_impressionable
 
   validates :title, :pseudonym, :body, presence: true
 
