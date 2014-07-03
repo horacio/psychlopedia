@@ -12,17 +12,12 @@ class Experience < ActiveRecord::Base
   default_scope { order('created_at DESC') }
 
   scope :approved, -> { where(is_approved: true) }
+  scope :field_like, -> (field, query) { where("LOWER(#{field}) LIKE ?", "%#{query}%") }
 
-  # XXX: a poor's man (and a poor's mind) search engine.
   def self.search(query)
-    @results = []
-    ["%#{query}", "%#{query}%", "#{query}%"].each do |query|
-      ["title", "pseudonym"].each do |field|
-        candidates = Experience.approved.where("LOWER(#{field}) LIKE ?", query)
-        candidates.each { |candidate| @results << candidate } unless candidates.empty?
-      end
-    end
-    @results.uniq
+    @results = %w(pseudonym title body).flat_map do |field|
+      Experience.approved.field_like(field, query)
+    end.uniq
   end
 
   # will_paginate per-page limit
