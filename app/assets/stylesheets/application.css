@@ -257,7 +257,7 @@ textarea, select, input, input[type="text"], input[type="password"], input[type=
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
   border-radius: 2px;
-  font-size: 1.25em;
+  font-size: .875em;
   width: 600px;
   max-width: 100%;
   display: block;
@@ -477,7 +477,7 @@ div#experience textarea {
 }
 
 div.search input[type="text"] {
-  height: 20px;
+  height: 15px;
   width: 50%;
   display: inline;
   padding-top: 4px;
@@ -494,6 +494,12 @@ div.search input[type="text"] {
 
 div.search input[type="text"]:focus {
   width: 70%;
+}
+
+div.search input[type="submit"] {
+  display: inline;
+  height: 25px;
+  width: 80px;
 }
 
 div.search form {
