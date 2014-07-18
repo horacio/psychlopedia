@@ -2,7 +2,7 @@ class Experience < ActiveRecord::Base
   extend FriendlyId
 
   has_many :cocktails, dependent: :destroy
-  accepts_nested_attributes_for :cocktails, reject_if: :cocktails_is_incomplete
+  accepts_nested_attributes_for :cocktails, reject_if: :cocktail_is_incomplete?
 
   friendly_id :title, use: :slugged
 
@@ -29,7 +29,7 @@ class Experience < ActiveRecord::Base
     save
   end
 
-  def cocktails_is_incomplete(cocktail)
+  def cocktail_is_incomplete?(cocktail)
     cocktail[:substance].blank? && cocktail[:dosage].blank?
   end
 end
