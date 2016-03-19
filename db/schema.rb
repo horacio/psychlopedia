@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140624180015) do
+ActiveRecord::Schema.define(version: 20160320213618) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "cocktails", force: true do |t|
+  create_table "cocktails", force: :cascade do |t|
     t.string   "substance"
     t.string   "dosage"
     t.string   "presentation"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20140624180015) do
     t.integer  "experience_id"
   end
 
-  create_table "experiences", force: true do |t|
+  create_table "experiences", force: :cascade do |t|
     t.string   "pseudonym",                            null: false
     t.string   "title",                                null: false
     t.text     "body"
@@ -39,12 +39,12 @@ ActiveRecord::Schema.define(version: 20140624180015) do
     t.string   "license"
     t.string   "source",      default: "psychlopedia"
     t.string   "locale",      default: "es-AR"
-    t.boolean  "is_approved", default: false
+    t.boolean  "approved",    default: false
   end
 
   add_index "experiences", ["slug"], name: "index_experiences_on_slug", unique: true, using: :btree
 
-  create_table "friendly_id_slugs", force: true do |t|
+  create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
     t.integer  "sluggable_id",              null: false
     t.string   "sluggable_type", limit: 50

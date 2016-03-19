@@ -12,11 +12,7 @@ module ExperiencesHelper
     markdown.render(text).html_safe
   end
 
-  def titleize(title)
-    title.split.map(&:capitalize).join(' ')
-  end
-
   def truncate_and_titleize(title, length = 40)
-    truncate(titleize(title), length: length)
+    truncate(title.titleize, length: length)
   end
 end

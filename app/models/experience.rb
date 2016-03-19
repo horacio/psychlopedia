@@ -8,9 +8,7 @@ class Experience < ActiveRecord::Base
 
   validates :title, :pseudonym, :body, presence: true
 
-  default_scope { order('created_at DESC') }
-
-  scope :approved, -> { where(is_approved: true) }
+  scope :approved, -> { where(approved: true) }
   scope :field_like, -> (field, query) { where("LOWER(#{field}) LIKE ?", "%#{query}%") }
 
   def self.search(query)
@@ -19,17 +17,18 @@ class Experience < ActiveRecord::Base
     end.uniq
   end
 
-  # will_paginate per-page limit
-  def self.per_page
-    15
+  def approve
+    update_attributes(approved: true)
   end
 
-  def approve
-    self.is_approved = true
-    save
-  end
+  private
 
   def cocktail_is_incomplete?(cocktail)
     cocktail[:substance].blank? && cocktail[:dosage].blank?
+  end
+
+  # will_paginate per-page limit
+  def self.per_page
+    15
   end
 end

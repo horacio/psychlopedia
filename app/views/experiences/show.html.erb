@@ -4,10 +4,11 @@
       <p class="notice"><%= flash[:notice] -%></p>
     <%- end -%>
     <%- if session[:admin] -%>
-      <p style="margin-bottom:5px;"><%= link_to '~Editar', edit_experience_path(@experience) -%></p>
+      <p style="margin-bottom:5px;"><%= link_to('~Editar', edit_experience_path(@experience)) -%></p>
+      <p style="margin-bottom:5px;"><%= link_to('~Borrar', experience_path(@experience), method: :delete) -%></p>
     <%- end -%>
     <div class="experience_data">
-      <h1 class="title" title="<%= titleize(@experience.title) -%>">
+      <h1 class="title" title="<%= @experience.title.titleize -%>">
         <span class="self"><%= truncate_and_titleize(@experience.title) -%></span>
       </h1>
       <h3 class="who_and_when">
@@ -49,17 +50,7 @@
     <%- end -%>
     <hr>
     <div id="comments">
-      <div id="disqus_thread"></div>
-      <script type="text/javascript">
-          var disqus_shortname = 'psychlopedia';
-          (function() {
-              var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-              dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-          })();
-      </script>
-      <noscript><%= t('experiences.show.no_script') -%></noscript>
-      <a href="http://disqus.com" class="dsq-brlink"><%= t('experiences.show.disqus_placeholder') -%> <span class="logo-disqus">Disqus</span></a>.
+      <!-- Yet to be. -->
     </div>
   </div>
 <%- end -%>

@@ -1,8 +1,7 @@
 class ExperiencesController < ApplicationController
   before_action :set_experience, only: [:show, :update, :edit, :destroy]
+  before_action :sanitize_query, only: [:search]
   before_action :check_admin, only: [:edit, :destroy]
-  before_action :has_permission_to_vote, only: [:update]
-  before_action :set_title, only: [:index, :new, :show, :search]
 
   def index
     @experiences = Experience.approved.paginate(page: params[:page])
@@ -25,6 +24,7 @@ class ExperiencesController < ApplicationController
 
   def create
     @experience = Experience.new(experience_params)
+
     if gotcha_valid? && @experience.save
       redirect_to experiences_path, notice: t('experiences.waiting_for_approval')
     else
@@ -33,7 +33,6 @@ class ExperiencesController < ApplicationController
   end
 
   def search
-    @query = extract_and_sanitize_query
     @results = Experience.search(@query)
   end
 
@@ -43,6 +42,7 @@ class ExperiencesController < ApplicationController
 
   def destroy
     @experience.destroy
+
     redirect_to admin_path
   end
 
@@ -52,28 +52,21 @@ class ExperiencesController < ApplicationController
     @experience = Experience.friendly.approved.find(params[:id]) rescue Experience.none
   end
 
-  def set_title
-    if params[:query]
-      translated_title_for_action = t("experiences.#{action_name}_title", query: extract_and_sanitize_query)
-    elsif action_name == 'show'
-      translated_title_for_action = t("experiences.#{action_name}_title", experience_title: @experience.title.split.map(&:capitalize).join(' '))
-    else
-      translated_title_for_action = t("experiences.#{action_name}_title")
-    end
-    @page_title = "Psiclopedia - #{translated_title_for_action}"
-  end
-
-  def extract_and_sanitize_query
-    params[:query].downcase.parameterize
+  def sanitize_query
+    @query = params[:query].downcase.parameterize
   end
 
   def experience_params
-    permitted = params.require(:experience).permit(:title, :pseudonym, :body, :set, :setting, :locale,
-                                                   cocktails_attributes: [:id, :substance, :dosage])
-    permitted.delete_if { |key, value| value.blank? }
+    permitted_params = params.require(:experience).permit(experience_permitted_params)
+    permitted_params.delete_if { |key, value| value.blank? }
   end
 
   def check_admin
     redirect_to experiences_path unless logged_in?
+  end
+
+  def experience_permitted_params
+    experience_attributes = [:title, :pseudonym, :body, :set, :setting, :locale]
+    experience_attributes << { cocktails_attributes: [:id, :substance, :dosage] }
   end
 end

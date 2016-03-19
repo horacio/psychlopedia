@@ -12,7 +12,7 @@ describe Experience do
 
     context 'there is some content on the archive' do
       it 'displays a list of experiences' do
-        create_list(:experience, 5, is_approved: true)
+        create_list(:experience, 5, approved: true)
 
         visit root_path
 
@@ -23,7 +23,7 @@ describe Experience do
 
   describe 'GET /experience/:some_experience' do
     it 'displays the mandatory contents of an experience' do
-      experience = create(:experience, is_approved: true)
+      experience = create(:experience, approved: true)
 
       visit experience_path(experience)
 
@@ -34,7 +34,7 @@ describe Experience do
     end
 
     it 'displays the contents of an experience and its cocktail information' do
-      experience = create(:experience_with_cocktail_data, is_approved: true)
+      experience = create(:experience_with_cocktail_data, approved: true)
 
       visit experience_path(experience)
 
@@ -63,7 +63,6 @@ describe Experience do
 
   describe 'POST /experiences' do
     before do
-      Gotcha.skip_validation = true
       @fields = %w(title pseudonym set setting body).map { |f| "experience[#{f}]" }
     end
 
@@ -91,7 +90,7 @@ describe Experience do
 
     context 'there is some content on the site' do
       before do
-        @experience = create(:experience, is_approved: true)
+        @experience = create(:experience, approved: true)
       end
 
       it 'appears on the homepage' do
@@ -107,8 +106,8 @@ describe Experience do
         click_button I18n.t('experiences.search')
 
         expect(page).to have_content /Resultados de la búsqueda para: #{query}/
-        expect(page).to have_link I18n.t('experiences.random.keep_reading'),
-                                  href: experience_path(@experience)
+        expect(page).to have_link \
+          I18n.t('experiences.random.keep_reading'), href: experience_path(@experience)
       end
     end
   end

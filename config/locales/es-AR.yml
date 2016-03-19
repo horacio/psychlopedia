@@ -21,11 +21,16 @@ es-AR:
     new_title: Nueva
     show_title: '%{experience_title}'
     search_title: 'Resultados para: %{query}'
+    about_title: 'Sobre Psiclopedia'
+    legal_title: 'Legal'
+    create_title: 'Nueva'
+    privacy_title: 'Privacidad'
+    style_title: 'Guía de Estilo'
     comments_placeholder: comentarios
     search: Buscar
     no_data: Uh, qué macana. Aún no tenemos experiencias.
     no_data_invitation: ¿Querés empezar por la tuya?
-    waiting_for_approval: ¡Gracias! En unos momentos aprobaremos tu experiencia y podrá ser accedida públicamente.
+    waiting_for_approval: ¡Gracias! En unos momentos aprobaremos tu experiencia y podrá ser accedida públicamente. [X]
     addition:
       disclaimer: Recordá que esta experiencia tendrá que ser aprobada antes de ser publicada en Psiclopedia.
       title: Título

@@ -1,27 +1,30 @@
 source 'https://rubygems.org'
 
-ruby '2.1.2'
+ruby '2.2.1'
 
-gem 'friendly_id', '~> 5.0.0'
+gem 'friendly_id', '~> 5.0'
 gem 'gotcha'
 gem 'jquery-rails'
 gem 'jquery-turbolinks'
-gem 'jbuilder', '~> 1.2'
 gem 'pg'
-gem 'rails', '4.0.3'
+gem 'rails', '~> 4.2'
 gem 'redcarpet'
 gem 'thin'
 gem 'turbolinks'
 gem 'will_paginate'
 
-group :development, :test do
+group :development do
+  gem 'launchy'
+  gem 'lunchy'
+  gem 'pry-nav'
+  gem 'pry'
+end
+
+group :test do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'factory_girl_rails'
   gem 'guard-rspec'
-  gem 'launchy'
-  gem 'pry'
-  gem 'pry-nav'
   gem 'rspec-rails'
   gem 'selenium-webdriver'
   gem 'shoulda-matchers'

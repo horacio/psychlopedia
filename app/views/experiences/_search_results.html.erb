@@ -3,7 +3,7 @@
   <% @results.each do |experience| -%>
     <li class="experience search-result">
       <%= l(experience.created_at.to_date) -%>
-      <%= link_to (truncate(titleize(experience.title), length: 45, omission: '...')), experience_path(experience), title: titleize(experience.title) -%>
+      <%= link_to (truncate(experience.title.titleize, length: 45, omission: '...')), experience_path(experience), title: experience.title.titleize -%>
       <%= t('psychlopedia.misc.by') -%>
       <%= experience.pseudonym -%>
       <div class="snippet">

@@ -1,10 +1,11 @@
 class InfrastructureController < ApplicationController
   before_action :set_title
 
-  def about; end
-  def style; end
-  def legal; end
-  def privacy; end
+  SECTIONS = %i(about style legal private).freeze
+
+  SECTIONS.each do |section|
+    define_method(section) {}
+  end
 
   private
 

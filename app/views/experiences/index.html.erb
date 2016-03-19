@@ -10,7 +10,7 @@
   </div>
   <% @experiences.each do |experience| -%>
     <li class="experience">
-      <%= link_to truncate_and_titleize(experience.title), experience_path(experience), title: titleize(experience.title) -%>
+      <%= link_to truncate_and_titleize(experience.title), experience_path(experience), title: experience.title.titleize -%>
       <%= t('psychlopedia.misc.by') -%>
       <span style="font-weight:bold;"><%= experience.pseudonym -%></span>
     </li>

@@ -14,7 +14,7 @@ end
 describe Experience, 'scopes' do
   describe '.approved' do
     it 'returns an array of approved experiences' do
-      approved_experience = create(:experience, is_approved: true)
+      approved_experience = create(:experience, approved: true)
       new_experience = create(:experience)
 
       experiences = Experience.approved

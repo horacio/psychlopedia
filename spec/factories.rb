@@ -29,12 +29,13 @@ FactoryGirl.define do
     pseudonym 'svankmajer'
     title
     body 'some text body'
-    is_approved false
+    approved false
 
     factory :experience_with_cocktail_data do
-      ignore do
+      transient do
         cocktails_count 3
       end
+
       after(:create) do |experience, evaluator|
         create_list(:cocktail, evaluator.cocktails_count, experience: experience)
       end
