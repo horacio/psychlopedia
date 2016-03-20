@@ -32,10 +32,6 @@ class ExperiencesController < ApplicationController
     end
   end
 
-  def search
-    @results = Experience.search(@query)
-  end
-
   def edit
     @experience.cocktails.build if @experience.cocktails.empty?
   end

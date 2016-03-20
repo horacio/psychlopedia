@@ -9,13 +9,6 @@ class Experience < ActiveRecord::Base
   validates :title, :pseudonym, :body, presence: true
 
   scope :approved, -> { where(approved: true) }
-  scope :field_like, -> (field, query) { where("LOWER(#{field}) LIKE ?", "%#{query}%") }
-
-  def self.search(query)
-    @results = %w(pseudonym title body).flat_map do |field|
-      Experience.approved.field_like(field, query)
-    end.uniq
-  end
 
   def approve
     update_attributes(approved: true)

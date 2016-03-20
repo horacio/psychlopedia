@@ -2,12 +2,6 @@
   <p class="notice"><%= flash[:notice] -%></p>
 <%- end -%>
 <%- unless @experiences.empty? -%>
-  <div class="search">
-    <%= form_tag(search_path, method: :get) do -%>
-      <%= text_field_tag(:query) -%>
-      <%= submit_tag t('experiences.search') -%>
-    <%- end -%>
-  </div>
   <% @experiences.each do |experience| -%>
     <li class="experience">
       <%= link_to truncate_and_titleize(experience.title), experience_path(experience), title: experience.title.titleize -%>

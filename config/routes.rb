@@ -3,8 +3,6 @@ Psychlopedia::Application.routes.draw do
     resources :experiences, path: 'experiencias'
   end
 
-  get 'search', to: 'experiences#search'
-
   get 'about', to: 'infrastructure#about', path: 'que'
   get 'style', to: 'infrastructure#style', path: 'estilo'
   get 'legal', to: 'infrastructure#legal', path: 'legal'
