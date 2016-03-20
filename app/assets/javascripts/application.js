@@ -16,6 +16,3 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-$(window).on('page:change', function () {
-  $.getScript('https://platform.twitter.com/widgets.js');
-});
